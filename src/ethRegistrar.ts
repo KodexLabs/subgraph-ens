@@ -18,15 +18,15 @@ import {
   NameRegistered as NameRegisteredEvent,
   NameRenewed as NameRenewedEvent,
   Transfer as TransferEvent,
-} from './types/BaseRegistrar/BaseRegistrar'
+} from '../generated/BaseRegistrar/BaseRegistrar'
 
 import {
   NameRegistered as ControllerNameRegisteredEvent,
   NameRenewed as ControllerNameRenewedEvent
-} from './types/EthRegistrarController/EthRegistrarController'
+} from '../generated/EthRegistrarController/EthRegistrarController'
 
 // Import entity types generated from the GraphQL schema
-import { Account, Domain, Registration, NameRegistered, NameRenewed, NameTransferred } from './types/schema'
+import { Account, Domain, Registration, NameRegistered, NameRenewed, NameTransferred } from '../generated/schema'
 
 var rootNode:ByteArray = byteArrayFromHex("93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae")
 

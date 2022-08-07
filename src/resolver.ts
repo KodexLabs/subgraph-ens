@@ -1,5 +1,5 @@
 import { Address, ByteArray, Bytes, ethereum, Value } from "@graphprotocol/graph-ts";
-import { Resolver as ResolverContract } from "./types/Resolver/Resolver";
+import { Resolver as ResolverContract } from "../generated/Resolver/Resolver";
 import {
   ABIChanged as ABIChangedEvent,
   AddrChanged as AddrChangedEvent,
@@ -10,11 +10,11 @@ import {
   NameChanged as NameChangedEvent,
   PubkeyChanged as PubkeyChangedEvent,
   TextChanged as TextChangedEvent
-} from './types/Resolver/Resolver';
+} from '../generated/Resolver/Resolver';
 import {
   AbiChanged, Account, AddrChanged, AuthorisationChanged, ContenthashChanged, Domain, InterfaceChanged, MulticoinAddrChanged,
   NameChanged, PubkeyChanged, Resolver, TextChanged
-} from './types/schema';
+} from '../generated/schema';
 
 
 
@@ -69,7 +69,7 @@ export function handleMulticoinAddrChanged(event: AddressChangedEvent): void {
 
 export function handleNameChanged(event: NameChangedEvent): void {
   if(event.params.name.indexOf("\u0000") != -1) return;
-  
+
   let resolverEvent = new NameChanged(createEventID(event))
   resolverEvent.resolver = createResolverID(event.params.node, event.address)
   resolverEvent.blockNumber = event.block.number.toI32()
@@ -128,7 +128,7 @@ export function handleContentHashChanged(event: ContenthashChangedEvent): void {
   let resolver = getOrCreateResolver(event.params.node, event.address)
   resolver.contentHash = event.params.hash
   resolver.save()
-  
+
   let resolverEvent = new ContenthashChanged(createEventID(event))
   resolverEvent.resolver = createResolverID(event.params.node, event.address)
   resolverEvent.blockNumber = event.block.number.toI32()

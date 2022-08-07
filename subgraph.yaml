@@ -1,4 +1,4 @@
-specVersion: 0.0.3
+specVersion: 0.0.6
 description: >-
   A secure & decentralized way to address resources on and off the blockchain
   using simple, human-readable names. Access domains and transfer history.
@@ -16,7 +16,7 @@ dataSources:
       abi: EnsRegistry
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/ensRegistry.ts
       entities:
@@ -44,7 +44,7 @@ dataSources:
       abi: EnsRegistry
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/ensRegistry.ts
       entities:
@@ -70,7 +70,7 @@ dataSources:
       abi: Resolver
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/resolver.ts
       entities:
@@ -116,7 +116,7 @@ dataSources:
       abi: BaseRegistrar
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/ethRegistrar.ts
       entities:
@@ -143,7 +143,7 @@ dataSources:
       abi: EthRegistrarController
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       file: ./src/ethRegistrar.ts
       entities:
